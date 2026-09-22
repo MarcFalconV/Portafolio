@@ -1,0 +1,365 @@
+/* ==========================================================
+   PROJECT CARD
+========================================================== */
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.project-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================
+   PROJECT COLUMNS
+========================================================== */
+
+.project-column {
+  border-left: 1px solid var(--color-border);
+}
+
+/* ==========================================================
+   PROJECT IMAGE
+========================================================== */
+
+.project-image-link {
+  position: relative;
+
+  display: block;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: var(--color-bg-subtle);
+}
+
+.project-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 600ms ease;
+}
+
+.project-image-link::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgb(0 0 0 / 0.04);
+
+  pointer-events: none;
+
+  transition: background-color var(--transition-base);
+}
+
+.project-image-link:hover::after {
+  background: rgb(0 0 0 / 0);
+}
+
+.project-image-link:hover .project-image {
+  transform: scale(1.025);
+}
+
+.project-image-link:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: -2px;
+}
+
+/* ==========================================================
+   PROJECT CONTENT
+========================================================== */
+
+.project-content {
+  background: var(--color-bg);
+}
+
+/* ==========================================================
+   PROJECT STATUS
+========================================================== */
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--color-brand);
+
+  font-family: var(--font-code);
+  font-size: 0.66rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+}
+
+.project-status::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  flex: 0 0 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.project-card:hover .project-status::before {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px var(--color-brand-light);
+}
+
+/* ==========================================================
+   PROJECT TITLES
+========================================================== */
+
+.project-name {
+  margin-top: 14px;
+  margin-bottom: 6px;
+
+  color: var(--color-text);
+
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+}
+
+.project-title {
+  color: var(--color-text-secondary);
+
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* ==========================================================
+   PROJECT DESCRIPTION
+========================================================== */
+
+.project-description {
+  color: var(--color-text-secondary);
+
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+/* ==========================================================
+   PROJECT ACTION
+========================================================== */
+
+.project-action {
+  border-color: var(--color-border) !important;
+}
+
+.project-button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--color-brand);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: color var(--transition-fast);
+}
+
+.project-button:hover {
+  color: var(--color-brand-dark);
+}
+
+.project-button:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.project-button i {
+  font-size: 0.7rem;
+
+  transition: transform var(--transition-fast);
+}
+
+.project-button:hover i {
+  transform: translateX(2px);
+}
+
+/* ==========================================================
+   TECHNICAL TITLE
+========================================================== */
+
+.project-tech-title {
+  color: var(--color-text);
+
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+
+  letter-spacing: -0.015em;
+}
+
+/* ==========================================================
+   TECHNICAL DETAILS
+========================================================== */
+
+.project-detail {
+  position: relative;
+}
+
+.project-detail-header {
+  color: var(--color-text);
+}
+
+.project-detail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  flex: 0 0 25px;
+
+  border: 1px solid var(--color-brand-light);
+  border-radius: var(--radius-sm);
+
+  background: var(--color-brand-light);
+  color: var(--color-brand);
+
+  font-size: 0.62rem;
+}
+
+.project-detail-label {
+  color: var(--color-text);
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================
+   TECHNOLOGY TAGS
+========================================================== */
+
+.project-technology {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  min-height: 30px;
+  padding: 6px 9px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  background: var(--color-bg-soft);
+  color: var(--color-text-secondary);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.project-technology img,
+.project-technology i {
+  width: 15px;
+  height: 15px;
+
+  flex: 0 0 15px;
+
+  object-fit: contain;
+}
+
+.project-technology i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-brand);
+  font-size: 0.68rem;
+}
+
+.project-technology:hover {
+  border-color: var(--color-brand);
+  background: var(--color-brand-light);
+  color: var(--color-text);
+
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-image,
+  .project-image-link::after,
+  .project-status::before,
+  .project-button,
+  .project-button i,
+  .project-technology {
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-image-link:hover .project-image {
+    transform: none;
+  }
+
+  .project-status::before {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .project-button:hover i {
+    transform: none;
+  }
+
+  .project-technology:hover {
+    transform: none;
+  }
+}
